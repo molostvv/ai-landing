@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Получить код
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Установить PHP 8.3
         uses: shivammathur/setup-php@v2
@@ -21,13 +21,25 @@ jobs:
           tools: none
 
       - name: Синтаксис PHP
-        run: find landing -name '*.php' -print0 | xargs -0 -n1 php -l
+        # ошибка показывается на нужной строке файла (аннотация GitHub)
+        run: |
+          status=0
+          while IFS= read -r -d '' f; do
+            if ! out=$(php -l "$f" 2>&1); then
+              line=$(printf '%s' "$out" | grep -oE 'on line [0-9]+' | grep -oE '[0-9]+' | head -1)
+              echo "::error file=$f,line=${line:-1},title=Синтаксис PHP::$(printf '%s' "$out" | head -1)"
+              status=1
+            else
+              echo "$out"
+            fi
+          done < <(find landing -name '*.php' -print0)
+          exit $status
 
       - name: Синтаксис JavaScript
         run: node --check landing/assets/js/main.js
 
       - name: Установить Python для валидатора
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -41,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Получить код со всей историей
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
