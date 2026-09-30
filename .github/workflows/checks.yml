@@ -1,0 +1,51 @@
+# Проверки на каждый push и pull request.
+# Результат — на вкладке Actions репозитория и галочкой/крестиком у коммита.
+name: Проверки
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  code:
+    name: Код сайта
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить код
+        uses: actions/checkout@v4
+
+      - name: Установить PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: none
+
+      - name: Синтаксис PHP
+        run: find landing -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Синтаксис JavaScript
+        run: node --check landing/assets/js/main.js
+
+      - name: Установить Python для валидатора
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Валидатор HTML (движок W3C)
+        run: |
+          pip install --quiet html5validator
+          html5validator --root landing/ --format text
+
+  secrets:
+    name: Поиск секретов
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить код со всей историей
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
