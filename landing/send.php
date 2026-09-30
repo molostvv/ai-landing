@@ -9,7 +9,7 @@
  */
 declare(strict_types=1);
 
-const RATE_LIMIT  = 5;     // заявок с одного IP
+const RATE_LIMIT  = 5      // заявок с одного IP
 const RATE_WINDOW = 3600;  // за столько секунд
 
 header('Content-Type: application/json; charset=utf-8');
