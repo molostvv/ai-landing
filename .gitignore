@@ -1,0 +1,14 @@
+# Секреты — никогда не коммитить
+.credentials
+config.php
+*.env
+
+# Локальные настройки и служебные файлы
+.claude/settings.local.json
+__pycache__/
+*.pyc
+*.log
+
+# Тестовые файлы
+test.txt
+hello world.txt

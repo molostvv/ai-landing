@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /send.php
+
+# Замените {{SITE_URL}} на адрес сайта (https://example.ru) и уберите «# » в начале строки ниже.
+# Sitemap: {{SITE_URL}}/sitemap.xml

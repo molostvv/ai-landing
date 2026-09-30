@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ИИ-агенты для повседневных задач — бесплатная консультация</title>
+  <meta name="description" content="Настроим ИИ-агента, который разбирает почту, записывает клиентов и готовит отчёты. Освободите до 10 часов в неделю. Первая консультация — бесплатно.">
+  <meta name="theme-color" content="#4F46E5">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="{{COMPANY_NAME}}">
+  <meta property="og:title" content="Отдайте рутину ИИ-агенту — освободите до 10 часов в неделю">
+  <meta property="og:description" content="Цифровой помощник разбирает почту, записывает клиентов и готовит отчёты. Первая консультация — бесплатно.">
+  <meta property="og:url" content="{{SITE_URL}}/">
+  <meta property="og:image" content="{{SITE_URL}}/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="{{COMPANY_NAME}} — в начало страницы">
+        <img src="assets/img/favicon.svg" width="32" height="32" alt="">
+        <span>{{COMPANY_NAME}}</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основное меню">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#tasks">Задачи</a></li>
+          <li><a class="site-nav__link" href="#how">Как это работает</a></li>
+          <li><a class="site-nav__link" href="#faq">Вопросы</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm site-nav__cta js-cta" href="#form">Получить консультацию</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. Первый экран -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="badge">Первая консультация — бесплатно</p>
+          <h1 id="hero-title">Отдайте рутину <span class="nowrap">ИИ-агенту</span> — освободите до&nbsp;10&nbsp;часов в&nbsp;неделю</h1>
+          <p class="hero__lead">Настроим цифрового помощника, который разбирает почту, записывает клиентов и готовит отчёты. Вы решаете, что важно, — он делает остальное.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary js-cta" href="#form">Получить консультацию</a>
+            <a class="btn btn--ghost" href="#how">Как это работает</a>
+          </div>
+          <ul class="hero__points">
+            <li>Без технических знаний</li>
+            <li>Важные действия — только с вашего согласия</li>
+          </ul>
+        </div>
+        <div class="hero__art">
+          <img src="assets/img/hero.svg" width="560" height="460" alt="Схема: вы ставите задачу, ИИ-агент выполняет её в почте, календаре и таблицах, вы проверяете готовый результат">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Что такое ИИ-агент -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="section-head reveal">
+          <p class="eyebrow">Простыми словами</p>
+          <h2 id="about-title">Что такое ИИ-агент</h2>
+          <p class="about__text">ИИ-агент — это цифровой помощник, который не просто отвечает на вопросы, а сам выполняет задачи: разбирает письма, заполняет таблицы, записывает клиентов. Вы один раз объясняете, что и как делать, а агент повторяет это каждый день. Решения по-прежнему принимаете вы.</p>
+        </div>
+        <div class="vs reveal">
+          <article class="vs-card">
+            <h3 class="vs-card__title">Чат-бот отвечает</h3>
+            <p>Вы спрашиваете — он подсказывает. Всё остальное вы делаете сами.</p>
+            <p class="vs-card__example">«Как вежливо ответить клиенту?» — получаете текст и отправляете его сами.</p>
+          </article>
+          <article class="vs-card vs-card--agent">
+            <h3 class="vs-card__title">Агент делает</h3>
+            <p>Вы ставите задачу — он выполняет её до конца и сообщает о результате.</p>
+            <p class="vs-card__example">Агент сам готовит ответы на новые письма и отправляет их после вашего «да».</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Задачи -->
+    <section class="section section--alt" id="tasks" aria-labelledby="tasks-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Задачи</p>
+          <h2 id="tasks-title">Что можно поручить агенту</h2>
+          <p>Начните с одной задачи, которая отнимает больше всего времени. Остальные можно добавить позже.</p>
+        </div>
+        <ul class="cards">
+          <li class="card reveal">
+            <img class="card__icon" src="assets/img/icon-mail.svg" width="48" height="48" alt="">
+            <h3>Почта и ответы клиентам</h3>
+            <p>Сортирует входящие, готовит черновики ответов на типовые вопросы и напоминает о важных письмах.</p>
+          </li>
+          <li class="card reveal">
+            <img class="card__icon" src="assets/img/icon-calendar.svg" width="48" height="48" alt="">
+            <h3>Календарь и запись</h3>
+            <p>Записывает клиентов в свободные окна, переносит встречи и присылает напоминания вам и клиентам.</p>
+          </li>
+          <li class="card reveal">
+            <img class="card__icon" src="assets/img/icon-report.svg" width="48" height="48" alt="">
+            <h3>Отчёты и таблицы</h3>
+            <p>Собирает данные из таблиц, считает итоги и присылает готовый отчёт в удобный вам день.</p>
+          </li>
+          <li class="card reveal">
+            <img class="card__icon" src="assets/img/icon-news.svg" width="48" height="48" alt="">
+            <h3>Поиск и сводка новостей</h3>
+            <p>Каждое утро просматривает нужные сайты и присылает короткую сводку самого важного для вашего дела.</p>
+          </li>
+          <li class="card reveal">
+            <img class="card__icon" src="assets/img/icon-docs.svg" width="48" height="48" alt="">
+            <h3>Документы и договоры</h3>
+            <p>Заполняет договоры и счета по вашим шаблонам, проверяет реквизиты и раскладывает файлы по папкам.</p>
+          </li>
+          <li class="card reveal">
+            <img class="card__icon" src="assets/img/icon-social.svg" width="48" height="48" alt="">
+            <h3>Соцсети и контент</h3>
+            <p>Предлагает идеи постов, готовит черновики и публикует их по расписанию после вашего одобрения.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. Как это работает -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Как это работает</p>
+          <h2 id="how-title">Три шага до&nbsp;первого результата</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step__top">
+              <span class="step__num" aria-hidden="true">1</span>
+              <img src="assets/img/step-talk.svg" width="48" height="48" alt="">
+            </div>
+            <h3>Рассказываете о задачах</h3>
+            <p>На бесплатной консультации разбираем ваш день и выбираем, что отдать агенту в первую очередь.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step__top">
+              <span class="step__num" aria-hidden="true">2</span>
+              <img src="assets/img/step-setup.svg" width="48" height="48" alt="">
+            </div>
+            <h3>Настраиваем агента</h3>
+            <p>Подключаем его к вашей почте, календарю и таблицам, объясняем правила и проверяем на реальных примерах.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step__top">
+              <span class="step__num" aria-hidden="true">3</span>
+              <img src="assets/img/step-check.svg" width="48" height="48" alt="">
+            </div>
+            <h3>Агент работает, вы проверяете</h3>
+            <p>Агент выполняет задачи каждый день, а важные действия присылает вам на подтверждение.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5. До и после -->
+    <section class="section section--alt" id="compare" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">До и после</p>
+          <h2 id="compare-title">Один день: без агента и&nbsp;с&nbsp;агентом</h2>
+          <p>Примерный расчёт для обычного рабочего дня предпринимателя. Ваши цифры зависят от задач.</p>
+        </div>
+        <div class="compare reveal">
+          <table class="compare-table">
+            <caption class="visually-hidden">Примерное время на задачи за один рабочий день без агента и с агентом</caption>
+            <thead>
+              <tr>
+                <th scope="col">Задача</th>
+                <th scope="col">Без агента</th>
+                <th scope="col">С агентом</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Разбор почты и ответы</th>
+                <td><span class="bar bar--before" style="--w: 100"></span>1 ч</td>
+                <td><span class="bar bar--after" style="--w: 33"></span>около 20 мин</td>
+              </tr>
+              <tr>
+                <th scope="row">Запись клиентов и переписка</th>
+                <td><span class="bar bar--before" style="--w: 67"></span>40 мин</td>
+                <td><span class="bar bar--after" style="--w: 17"></span>около 10 мин</td>
+              </tr>
+              <tr>
+                <th scope="row">Отчёты и таблицы</th>
+                <td><span class="bar bar--before" style="--w: 50"></span>30 мин</td>
+                <td><span class="bar bar--after" style="--w: 17"></span>около 10 мин</td>
+              </tr>
+              <tr>
+                <th scope="row">Поиск информации</th>
+                <td><span class="bar bar--before" style="--w: 50"></span>30 мин</td>
+                <td><span class="bar bar--after" style="--w: 17"></span>около 10 мин</td>
+              </tr>
+              <tr>
+                <th scope="row">Документы и счета</th>
+                <td><span class="bar bar--before" style="--w: 50"></span>30 мин</td>
+                <td><span class="bar bar--after" style="--w: 33"></span>около 20 мин</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Итого за день</th>
+                <td>3 ч 10 мин</td>
+                <td>около 1 ч 10 мин</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="compare-summary reveal">В среднем около <strong>2 часов в день</strong> — это до <strong>10 часов в неделю</strong> на клиентов, семью или отдых.</p>
+      </div>
+    </section>
+
+    <!-- 6. Безопасность -->
+    <section class="section" id="security" aria-labelledby="security-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Безопасность</p>
+          <h2 id="security-title">Ваши данные под контролем</h2>
+          <p>Агент — помощник, а не замена. Он работает по вашим правилам и не принимает важных решений за вас.</p>
+        </div>
+        <ul class="principles">
+          <li class="principle reveal">
+            <img src="assets/img/icon-shield.svg" width="48" height="48" alt="">
+            <h3>Данные остаются в ваших сервисах</h3>
+            <p>Письма, файлы и таблицы хранятся там же, где и сейчас: в вашей почте, облаке и календаре.</p>
+          </li>
+          <li class="principle reveal">
+            <img src="assets/img/icon-key.svg" width="48" height="48" alt="">
+            <h3>Доступ выдаёте вы</h3>
+            <p>Агент видит только то, к чему вы открыли доступ. Отключить его можно в любой момент.</p>
+          </li>
+          <li class="principle reveal">
+            <img src="assets/img/icon-eye.svg" width="48" height="48" alt="">
+            <h3>Всё прозрачно</h3>
+            <p>Каждое действие агента видно в отчёте: что сделано, когда и почему.</p>
+          </li>
+        </ul>
+        <div class="permissions reveal">
+          <div class="perm-card perm-card--auto">
+            <h3>Агент делает сам</h3>
+            <ul>
+              <li>Сортирует письма и готовит черновики ответов</li>
+              <li>Заполняет таблицы и собирает отчёты</li>
+              <li>Присылает напоминания и сводки</li>
+            </ul>
+          </div>
+          <div class="perm-card perm-card--confirm">
+            <h3>Только после вашего подтверждения</h3>
+            <ul>
+              <li>Отправляет письма и сообщения клиентам</li>
+              <li>Переносит и отменяет встречи</li>
+              <li>Публикует посты</li>
+              <li>Удаляет письма и файлы</li>
+            </ul>
+            <p class="perm-card__note">Платежей и переводов денег агент не совершает.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Вопросы и ответы -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Вопросы и ответы</p>
+          <h2 id="faq-title">Частые вопросы</h2>
+        </div>
+        <div class="faq reveal">
+          <details class="faq__item">
+            <summary>Сколько это стоит?</summary>
+            <p>Стоимость зависит от задач и числа сервисов, которые нужно подключить. На бесплатной консультации разберём ваши задачи и назовём цену до начала работы.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Нужно ли уметь программировать?</summary>
+            <p>Нет. Вы рассказываете о задачах обычными словами, настройку мы берём на себя. Пользоваться агентом можно через привычные почту и мессенджер.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Это сложно в использовании?</summary>
+            <p>Нет. Агент присылает результаты и вопросы туда, где вам удобно, а вы отвечаете «да» или «нет». Никаких новых программ осваивать не нужно.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Какие сервисы можно подключить?</summary>
+            <p>Почту, календари, таблицы, облачные диски, мессенджеры и CRM. Точный список для ваших задач уточним на консультации.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Что, если агент ошибётся?</summary>
+            <p>Важные действия агент выполняет только после вашего подтверждения, а все его шаги видны в отчёте. Правила можно поправить в любой момент.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Чем агент отличается от чат-бота?</summary>
+            <p>Чат-бот отвечает на вопросы, а агент выполняет задачу до конца: пишет, заполняет, записывает и сообщает о результате.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Что будет на бесплатной консультации?</summary>
+            <p>Разберём ваш рабочий день, найдём задачи, которые проще всего отдать агенту, и покажем, как это будет работать.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Заявка -->
+    <section class="section" id="form" aria-labelledby="form-title">
+      <div class="container">
+        <div class="lead">
+          <div class="lead__intro">
+            <p class="eyebrow">Заявка</p>
+            <h2 id="form-title">Получите бесплатную консультацию</h2>
+            <p>Оставьте заявку — мы свяжемся с вами и договоримся о времени. Расскажем, какие задачи можно отдать агенту уже сейчас.</p>
+            <p class="lead__tg">Удобнее в мессенджере? <a class="js-tg" href="#form" data-href="https://t.me/{{TELEGRAM}}">Напишите нам в Telegram</a></p>
+          </div>
+          <form class="lead-form" id="lead-form" action="send.php" method="post">
+            <div class="field">
+              <label for="f-name">Имя</label>
+              <input class="ym-disable-keys" id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100" aria-describedby="f-name-error">
+              <p class="field__error" id="f-name-error"></p>
+            </div>
+            <div class="field">
+              <label for="f-contact">Телефон или Telegram</label>
+              <input class="ym-disable-keys" id="f-contact" name="contact" type="text" autocomplete="tel" required maxlength="100" placeholder="+7 900 000-00-00 или @ник" aria-describedby="f-contact-error">
+              <p class="field__error" id="f-contact-error"></p>
+            </div>
+            <div class="field">
+              <label for="f-task">Какую задачу хотите автоматизировать</label>
+              <textarea class="ym-disable-keys" id="f-task" name="task" rows="4" required minlength="5" maxlength="1000" placeholder="Например: разбирать почту и записывать клиентов" aria-describedby="f-task-error"></textarea>
+              <p class="field__error" id="f-task-error"></p>
+            </div>
+            <div class="field field--hp" aria-hidden="true">
+              <label for="f-website">Сайт</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="field">
+              <div class="checkbox">
+                <input id="f-consent" name="consent" type="checkbox" value="1" required aria-describedby="f-consent-error">
+                <label for="f-consent">Я соглашаюсь на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></label>
+              </div>
+              <p class="field__error" id="f-consent-error"></p>
+            </div>
+            <button class="btn btn--primary lead-form__submit js-cta" type="submit">Получить консультацию</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <a class="logo" href="#top">
+          <img src="assets/img/favicon.svg" width="32" height="32" alt="">
+          <span>{{COMPANY_NAME}}</span>
+        </a>
+        <p class="site-footer__about">Настраиваем ИИ-агентов для повседневных задач: почта, календарь, отчёты, документы.</p>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Контакты</h2>
+        <ul class="site-footer__list">
+          <li><a href="#form" data-href="tel:{{PHONE}}">{{PHONE}}</a></li>
+          <li><a href="#form" data-href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+          <li><a class="js-tg" href="#form" data-href="https://t.me/{{TELEGRAM}}">Telegram: {{TELEGRAM}}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Документы</h2>
+        <ul class="site-footer__list">
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© 2026 {{COMPANY_NAME}}</p>
+    </div>
+  </footer>
+</body>
+</html>
