@@ -1,7 +1,7 @@
 <?php
 // Сборка сайта: content/*.md → public/.
 //   php build.php         предпросмотр по адресу http://localhost:8000, закрыт от индексации
-//   php build.php --prod  боевая сборка по адресу из config.php
+//   php build.php --prod  боевая сборка по адресу из settings.php
 // Если есть ошибки, public/ не трогается и скрипт завершается с кодом 1.
 declare(strict_types=1);
 
@@ -9,7 +9,7 @@ require __DIR__ . '/lib/Parsedown.php';
 require __DIR__ . '/lib/functions.php';
 
 $root = __DIR__;
-$config = require $root . '/config.php';
+$config = require $root . '/settings.php';
 $prod = in_array('--prod', $argv, true);
 $errors = [];
 $warnings = [];
@@ -28,7 +28,7 @@ function fail(array $errors): void
 if ($prod) {
     $base = rtrim($config['url'], '/');
     if (!preg_match('#^https://[a-z0-9.-]+\.[a-z0-9-]{2,}$#i', $base) || str_contains($base, 'localhost')) {
-        fail(["для боевой сборки укажите в config.php 'url' => 'https://домен' (сейчас: «{$config['url']}»)"]);
+        fail(["для боевой сборки укажите в settings.php 'url' => 'https://домен' (сейчас: «{$config['url']}»)"]);
     }
 } else {
     $base = 'http://localhost:8000';
@@ -143,7 +143,7 @@ if (is_string($home)) {
 
 $metrikaId = trim((string) $config['metrika_id']);
 if ($metrikaId !== '' && !ctype_digit($metrikaId)) {
-    $errors[] = "config.php: metrika_id должен состоять из цифр";
+    $errors[] = "settings.php: metrika_id должен состоять из цифр";
 }
 if ($prod && $metrikaId !== '' && !isset($pages['privacy'])) {
     $errors[] = 'Метрика ставит cookie: перед её подключением опубликуйте content/pages/privacy.md';
