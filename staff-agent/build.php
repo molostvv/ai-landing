@@ -185,6 +185,11 @@ mkdir($out);
 $page = function (array $p) use ($site): string {
     return render('layout', ['site' => $site, 'page' => $p + ['noindex' => false, 'og_type' => 'website', 'jsonld' => []]]);
 };
+// « — Staff Agent» дописываем, только если весь <title> укладывается в 70 символов: длиннее Яндекс обрежет
+$titleTag = function (string $title) use ($site): string {
+    $full = $title . ' — ' . $site['name'];
+    return mb_len($full) <= 70 ? $full : $title;
+};
 $crumbs = function (string $title, string $path) use ($base, $site): array {
     return [
         '@context' => 'https://schema.org',
@@ -205,7 +210,7 @@ foreach ($list as $i => $a) {
     $related = array_slice(array_values(array_filter($list, fn($x) => $x['slug'] !== $a['slug'])), 0, (int) $config['related_count']);
     $author = $site['author'] !== '' ? ['@type' => 'Person', 'name' => $site['author']] : $publisher;
     write_file("$out$path/index.html", $page([
-        'title_tag'   => $m['title'] . ' — ' . $site['name'],
+        'title_tag'   => $titleTag($m['title']),
         'description' => $m['description'],
         'path'        => $path,
         'og_type'     => 'article',
@@ -236,7 +241,7 @@ foreach ($list as $i => $a) {
 foreach ($pages as $p) {
     $path = "/{$p['slug']}/";
     write_file("$out$path/index.html", $page([
-        'title_tag'   => $p['meta']['title'] . ' — ' . $site['name'],
+        'title_tag'   => $titleTag($p['meta']['title']),
         'description' => $p['meta']['description'],
         'path'        => $path,
         'jsonld'      => [$crumbs($p['meta']['title'], $path)],
