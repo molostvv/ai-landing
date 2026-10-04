@@ -286,6 +286,16 @@ copy_dir("$root/assets", "$out/assets");
 copy_dir("$root/content/img", "$out/img");
 copy("$root/assets/img/favicon.svg", "$out/favicon.svg");
 
+// Файлы, которые должны лежать в корне сайта как есть (подтверждение Вебмастера и т. п.)
+foreach (glob("$root/static/*") ?: [] as $file) {
+    $name = basename($file);
+    if (file_exists("$out/$name")) {
+        $errors[] = "static/$name: файл с таким именем сайт уже создаёт";
+        continue;
+    }
+    copy($file, "$out/$name");
+}
+
 // ---------- Проверки готового сайта
 
 $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($out, FilesystemIterator::SKIP_DOTS));
