@@ -163,6 +163,7 @@ $site = [
     'base'       => $base,
     'prod'       => $prod,
     'metrika_id' => $prod ? $metrikaId : '',
+    'yandex_verification' => (string) ($config['yandex_verification'] ?? ''),
     'author'     => $config['author'],
     'css'        => '/assets/css/style.css?v=' . substr(md5_file("$root/assets/css/style.css"), 0, 8),
     'about'      => isset($pages['about']),

@@ -18,6 +18,9 @@
   <meta property="og:url" content="<?= e($site['base'] . $page['path']) ?>">
   <meta property="og:locale" content="ru_RU">
   <meta name="theme-color" content="#4F46E5">
+<?php if ($site['yandex_verification'] !== ''): ?>
+  <meta name="yandex-verification" content="<?= e($site['yandex_verification']) ?>">
+<?php endif ?>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="<?= e($site['css']) ?>">
 <?php foreach ($page['jsonld'] as $ld): ?>
