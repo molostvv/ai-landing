@@ -76,9 +76,11 @@ jobs:
           python-version: '3.12'
 
       - name: Валидатор HTML (движок W3C)
+        # только страницы, которые создаёт сборка: файлы из static/ (подтверждение
+        # Вебмастера и т. п.) должны лежать ровно в том виде, как их выдал сервис
         run: |
           pip install --quiet html5validator
-          html5validator --root public/ --format text
+          html5validator --root public/ --match "index.html" "404.html" --format text
 
   secrets:
     name: Поиск секретов
