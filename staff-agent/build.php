@@ -69,6 +69,9 @@ function check_doc(array $meta, string $body, string $label, bool $needDate, arr
     if (preg_match('/^#\s/m', $text)) {
         $errors[] = "$label: в тексте есть заголовок «# …» — H1 берётся из title, в тексте начинайте с «## …»";
     }
+    if (preg_match('/\[проверить/u', $body)) {
+        $errors[] = "$label: осталась редакторская пометка [проверить …] — закройте её перед публикацией";
+    }
     if (trim($body) === '') {
         $errors[] = "$label: опубликован пустой текст";
     }
