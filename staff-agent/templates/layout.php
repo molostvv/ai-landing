@@ -76,7 +76,8 @@
         s.async = true;
         s.src = 'https://mc.yandex.ru/metrika/tag.js?id=' + id;
         document.head.appendChild(s);
-        window.ym(id, 'init', { ssr: true, webvisor: true, clickmap: true, accurateTrackBounce: true, trackLinks: true });
+        // Вебвизор (запись действий посетителя) выключен: для SEO-отчётов не нужен, а данных собирает больше всего
+        window.ym(id, 'init', { ssr: true, webvisor: false, clickmap: true, accurateTrackBounce: true, trackLinks: true });
       }
       triggers.forEach(function (t) { window.addEventListener(t, start, { passive: true }); });
       setTimeout(start, 3000);

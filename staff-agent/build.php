@@ -146,7 +146,11 @@ if ($metrikaId !== '' && !ctype_digit($metrikaId)) {
     $errors[] = "settings.php: metrika_id должен состоять из цифр";
 }
 if ($prod && $metrikaId !== '' && !isset($pages['privacy'])) {
-    $errors[] = 'Метрика ставит cookie: перед её подключением опубликуйте content/pages/privacy.md';
+    if (!empty($config['metrika_without_privacy'])) {
+        $warnings[] = 'Метрика подключена без политики конфиденциальности (metrika_without_privacy в settings.php) — опубликуйте content/pages/privacy.md';
+    } else {
+        $errors[] = 'Метрика ставит cookie: перед её подключением опубликуйте content/pages/privacy.md';
+    }
 }
 
 if ($errors) {
