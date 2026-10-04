@@ -270,7 +270,9 @@ write_file("$out/404.html", $page([
 
 // sitemap.xml и robots.txt
 $lastmod = fn(array $m) => $m['updated'] ?? $m['date'] ?? null;
-$urls = [['/', $list ? max(array_map(fn($a) => $lastmod($a['meta']), $list)) : null]];
+// Главная меняется с каждой новой статьёй; пока статей нет — дата из updated в content/home.md
+$homeMod = max(array_filter(array_merge([$home['meta']['updated'] ?? null], array_map(fn($a) => $lastmod($a['meta']), $list))) ?: [null]);
+$urls = [['/', $homeMod]];
 foreach ($list as $a) {
     $urls[] = ["/{$a['slug']}/", $lastmod($a['meta'])];
 }
