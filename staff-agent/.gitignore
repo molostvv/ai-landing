@@ -1,0 +1,7 @@
+# Собранный сайт — результат php build.php, в git не хранится
+public/
+public.tmp/
+
+# Секреты и служебное
+.env
+*.log

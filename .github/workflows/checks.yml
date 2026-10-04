@@ -8,7 +8,7 @@ on:
 
 jobs:
   code:
-    name: Код сайта
+    name: Лендинг
     runs-on: ubuntu-latest
     steps:
       - name: Получить код
@@ -47,6 +47,38 @@ jobs:
         run: |
           pip install --quiet html5validator
           html5validator --root landing/ --format text
+
+  staff-agent:
+    name: Сайт staff-agent.ru
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: staff-agent
+    steps:
+      - name: Получить код
+        uses: actions/checkout@v5
+
+      - name: Установить PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: none
+
+      - name: Синтаксис PHP
+        run: find . -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Боевая сборка (шапки статей, ссылки, заглушки)
+        run: php build.php --prod
+
+      - name: Установить Python для валидатора
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Валидатор HTML (движок W3C)
+        run: |
+          pip install --quiet html5validator
+          html5validator --root public/ --format text
 
   secrets:
     name: Поиск секретов
