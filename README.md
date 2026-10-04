@@ -5,7 +5,7 @@
 Два сайта на одном сервере, каждый в своей папке:
 
 - [`staff-agent/`](staff-agent/) — информационный сайт [staff-agent.ru](https://staff-agent.ru) про ИИ-агентов и цифровых сотрудников. Статьи в markdown, PHP-скрипт собирает статичные страницы. Полигон для системы SEO-агентов. Как писать статьи и собирать сайт — в [`staff-agent/README.md`](staff-agent/README.md).
-- [`landing/`](landing/) — лендинг «ИИ-агенты для повседневных задач» с формой заявки, открывается по IP сервера. Установка, плейсхолдеры и отчёт по ТЗ — в [`landing/README.md`](landing/README.md).
+- [`landing/`](landing/) — лендинг «ИИ-агенты для повседневных задач» с формой заявки. С 04.10.2026 открывается по адресу http://170.168.112.225/landing/, а по самому IP — staff-agent (пока домен не появился в DNS). Конфиг nginx для IP — [`staff-agent/deploy/nginx/ip-default.conf`](staff-agent/deploy/nginx/ip-default.conf). Установка, плейсхолдеры и отчёт по ТЗ — в [`landing/README.md`](landing/README.md).
 
 | Путь | Что это |
 |---|---|
